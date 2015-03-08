@@ -9,22 +9,29 @@ elif [[ "$OSTYPE" == "freebsd"* ]]; then
 fi
 
 MESSAGE=$"
-==================== USAGE: >>sh utility.sh -i [FILENAME]\n
-  -h) check system version, linux distribution.\n
-  -1) check system information, such as Linux version, distribution and so on. 			  \n
-  -2) print first 10 lines in file. \n
-  -3) print last 10 lines in file.  \n
-  -4) replace '^A' with '/t'. 		\n
-		to deal with control keys, see [ref] http://www.robelle.com/smugbook/ascii.html   \n
-		to create control character in vim, use 'CTRL+V [character]'. ex. 'CTRL+V A'. 	  \n
-  -5) count lines in file. \n
-  -6) display line inforamtion of term in file. \n
-  -7) display column 2 in file. \n
-	*NOTE: use of ascii code as delimiter is needed when you use cmds 'sed', 'awk/', etc. \n
-		Ex. >>cat -v [FILENAME] | sed 's/\^A/\^/g' | awk -F'^' '{print $2}' 			  \n
+USAGE: >>sh utility.sh -i [FILENAME]
+\n============================================================ 
+\n -h) Help function.
+\n -1) check system information, such as Linux version, distribution and so on. 			 
+\n -2) print first 10 lines in file. 
+\n -3) print last 10 lines in file. 
+\n -4) replace '^A' with '/t'. 		
+\n      to deal with control keys, see [ref] http://www.robelle.com/smugbook/ascii.html   
+\n      to create control character in vim, use 'CTRL+V [character]'. ex. 'CTRL+V A'. 	
+\n -5) count lines in file. 
+\n -6) display line inforamtion of term in file.
+\n -7) display column 2 in file. 
+\n      *NOTE: use of ascii code as delimiter is needed when you use cmds 'sed', 'awk/', etc. 
+\n      Ex. >>cat -v [FILENAME] | sed 's/\^A/\^/g' | awk -F'^' '{print $2}' 			        
 
 "
 
+if [[ -z "$1" ]]
+  then
+    echo "No arguments supplied."
+    echo $MESSAGE
+    exit
+fi
 
 case $1 in
 	-h  ) 
@@ -61,7 +68,8 @@ case $1 in
 		;;				
 	-8  )
 		outputname="out.raw"
-		"`cat temp* > $outputname`" > /dev/null 2>&1
+		"`cat ./sh_testutility/temp* > $outputname`" > /dev/null 2>&1
 		echo "merge finished. output -> '$outputname'."
-		;;						
+		;;	
+						
 esac
