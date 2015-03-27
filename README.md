@@ -6,6 +6,14 @@ Provide some auxiliary tools or hints with sample codes, such as 'replace one co
 ## 2015/03/16
 
 ## ■ Appended
+- updated utility.sh (008-010)
+
+## ■ Comment
+- noted CONTROL CHARACTER (ex. ^B) are typed as `ctrl+v` + `ctrl+b`
+
+## 2015/03/16
+
+## ■ Appended
 - examples of `partitioned by` and `explode` clauses in HQL
 
 ## ■ Comment

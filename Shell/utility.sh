@@ -12,18 +12,20 @@ MESSAGE=$"
 USAGE: >>sh utility.sh -i [FILENAME]
 \n============================================================ 
 \n -h) Help function.
-\n -1) check system information, such as Linux version, distribution and so on. 			 
-\n -2) print first 10 lines in file. 
-\n -3) print last 10 lines in file. 
-\n -4) replace '^A' with '/t'. 		
+\n -001) check system information, such as Linux version, distribution and so on. 			 
+\n -002) print first 10 lines in file. 
+\n -003) print last 10 lines in file. 
+\n -004) replace '^A' with '/t'. 		
 \n      to deal with control keys, see [ref] http://www.robelle.com/smugbook/ascii.html   
 \n      to create control character in vim, use 'CTRL+V [character]'. ex. 'CTRL+V A'. 	
-\n -5) count lines in file. 
-\n -6) display line inforamtion of term in file.
-\n -7) display column 2 in file. 
+\n -005) count lines in file. 
+\n -006) display line inforamtion of term in file.
+\n -007) display column 2 in file. `cut`
+\n -008) display column 2 in file. `awk`
 \n      *NOTE: use of ascii code as delimiter is needed when you use cmds 'sed', 'awk/', etc. 
 \n      Ex. >>cat -v [FILENAME] | sed 's/\^A/\^/g' | awk -F'^' '{print $2}' 			        
-
+\n -009) merge files
+\n -010) show all texts including escapsed characters in file
 "
 
 if [[ -z "$1" ]]
@@ -37,7 +39,7 @@ case $1 in
 	-h  ) 
 		echo $MESSAGE
 		;;
-	-1  )
+	-001  )
 		if [[ "$platfrom" == "linux" ]]; then
 			echo "`cat /proc/version`"
 		elif [[ "$platfrom" == "osx" ]]; then
@@ -46,30 +48,41 @@ case $1 in
 			echo $platfrom
 		fi
 		;;
-	-2  )
+	-002  )
 		echo "`head -10 $2`"
 		;;
-	-3  )
+	-003  )
 		echo "`tail -10 $2`"
 		;;
-	-4  )
+	-004  )
 		outputname="out.raw"
-		"`cat -v $2 | sed 's/\^A/\t/g' > $outputname`" > /dev/null 2>&1
+		"`sed 's/\^A/\t/g' $2 > $outputname`" > /dev/null 2>&1
 		echo "replace finished. output -> '$outputname'."
+		### corrected. We can replace characters using sed directly and don't need to do 'cat -v'
 		;;
-	-5  )
+	-005  )
 		echo "`wc -l $2`"
 		;;
-	-6  )
+	-006  )
 		echo "`grep -in hello $2`"
 		;;		
-	-7  )
+	-007  )
 		echo "`cut -f2 -d $'\001' $2`"
+		### or `cut -f2 -d ^B $2`
+		### ^B should be typed as 'ctrl+v' + 'ctrl+b' rather than '^'+'b'. 		
 		;;				
-	-8  )
+	-008  )
+		echo "`awk -F^B '{print $2}' $2`"
+		### ^B should be typed as 'ctrl+v' + 'ctrl+b' rather than '^'+'b'. 
+		### first $2 represents the 2nd column in source, and the later means standard input.
+		### [ref](http://www.unixcl.com/2009/10/grep-and-print-control-characters-in.html)
+		;;				
+	-009  )
 		outputname="out.raw"
 		"`cat ./sh_testutility/temp* > $outputname`" > /dev/null 2>&1
 		echo "merge finished. output -> '$outputname'."
 		;;	
-						
+	-009  )
+		"`cat -e -v -t $2`"
+		;;							
 esac
