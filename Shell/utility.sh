@@ -82,7 +82,7 @@ case $1 in
 		"`cat ./sh_testutility/temp* > $outputname`" > /dev/null 2>&1
 		echo "merge finished. output -> '$outputname'."
 		;;	
-	-009  )
+	-010  )
 		"`cat -e -v -t $2`"
 		;;							
 esac
