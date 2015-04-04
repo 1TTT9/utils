@@ -3,6 +3,12 @@
 ===
 Provide some auxiliary tools or hints with sample codes, such as 'replace one column in a file', 'parse CSV file', 'display n line with condition in a file' and so on.
 
+## 2015/04/04
+
+## ■ Appended
+- add Perl/ folder
+- add sampling.pl file
+
 ## 2015/03/16
 
 ## ■ Appended
