@@ -6,8 +6,8 @@ Provide some auxiliary tools or hints with sample codes, such as 'replace one co
 ## 2015/04/04
 
 ## ■ Appended
-- add Perl/ folder
-- add sampling.pl file
+- add Perl/ and Python/ folders
+- add sampling.pl and example_draw files
 
 ## 2015/03/16
 
