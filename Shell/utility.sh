@@ -8,11 +8,17 @@ elif [[ "$OSTYPE" == "freebsd"* ]]; then
 	platfrom="freebsd"
 fi
 
+if [ "${USER}" != "root"]; then
+	echo "$0 must be run as root!!!"
+	exit 1
+fi
+
+
 MESSAGE=$"
 USAGE: >>sh utility.sh -i [FILENAME]
 \n============================================================ 
 \n -h) Help function.
-\n -001) check system information, such as Linux version, distribution and so on. 			 
+\n -001) check system information, such as Linux kernel version, distribution and so on. 			 
 \n -002) print first 10 lines in file. 
 \n -003) print last 10 lines in file. 
 \n -004) replace '^A' with '/t'. 		
@@ -26,6 +32,7 @@ USAGE: >>sh utility.sh -i [FILENAME]
 \n      Ex. >>cat -v [FILENAME] | sed 's/\^A/\^/g' | awk -F'^' '{print $2}' 			        
 \n -009) merge files
 \n -010) show all texts including escapsed characters in file
+\n -011) check debian version
 "
 
 if [[ -z "$1" ]]
@@ -84,5 +91,8 @@ case $1 in
 		;;	
 	-010  )
 		"`cat -e -v -t $2`"
-		;;							
+		;;
+	-011  )
+		echo "`lsb_release -a`"
+		;;
 esac

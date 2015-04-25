@@ -3,6 +3,11 @@
 ===
 Provide some auxiliary tools or hints with sample codes, such as 'replace one column in a file', 'parse CSV file', 'display n line with condition in a file' and so on.
 
+## 2015/04/25
+
+## ■ Appended
+- in shellscript, (1) check user identity. (2) debian version
+
 ## 2015/04/04
 
 ## ■ Appended
