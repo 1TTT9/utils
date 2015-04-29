@@ -3,6 +3,12 @@
 ===
 Provide some auxiliary tools or hints with sample codes, such as 'replace one column in a file', 'parse CSV file', 'display n line with condition in a file' and so on.
 
+
+## 2015/04/30
+
+## ■ Appended
+- in shellscript, (012) kill processes which execute same task.
+
 ## 2015/04/25
 
 ## ■ Appended

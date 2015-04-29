@@ -33,6 +33,7 @@ USAGE: >>sh utility.sh -i [FILENAME]
 \n -009) merge files
 \n -010) show all texts including escapsed characters in file
 \n -011) check debian version
+\n -012) kill all processes with regarding to keywords in one line
 "
 
 if [[ -z "$1" ]]
@@ -95,4 +96,7 @@ case $1 in
 	-011  )
 		echo "`lsb_release -a`"
 		;;
+	-012  )
+		echo '`ps aux | grep firefox | awk { system(  " kill -9 " $2 ) }`'
+		;;		
 esac
