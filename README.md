@@ -4,6 +4,11 @@
 Provide some auxiliary tools or hints with sample codes, such as 'replace one column in a file', 'parse CSV file', 'display n line with condition in a file' and so on.
 
 
+## 2015/05/08
+
+## ■ Appended
+- in shellscript, (013) display all results retrieved from `ps` and `grep`, and exclude `grep` itself. [ref](http://unix.stackexchange.com/questions/74185/how-can-i-prevent-grep-from-showing-up-in-ps-results)
+
 ## 2015/04/30
 
 ## ■ Appended

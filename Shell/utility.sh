@@ -34,6 +34,7 @@ USAGE: >>sh utility.sh -i [FILENAME]
 \n -010) show all texts including escapsed characters in file
 \n -011) check debian version
 \n -012) kill all processes with regarding to keywords in one line
+\n -013) show all grepped results and exclude the 'grep' process itself.
 "
 
 if [[ -z "$1" ]]
@@ -97,6 +98,9 @@ case $1 in
 		echo "`lsb_release -a`"
 		;;
 	-012  )
-		echo '`ps aux | grep firefox | awk { system(  " kill -9 " $2 ) }`'
+		echo "`ps aux | grep firefox | awk '{ system(  " kill -9 " $2 ) }'`"
 		;;		
+	-013  )
+		echo '`ps aux | grep "[f]irefox"`'
+		;;				
 esac
