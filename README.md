@@ -7,7 +7,12 @@ Provide some auxiliary tools or hints with sample codes, such as 'replace one co
 ## 2015/05/08
 
 ## ■ Appended
-- in shellscript, (013) display all results retrieved from `ps` and `grep`, and exclude `grep` itself. [ref](http://unix.stackexchange.com/questions/74185/how-can-i-prevent-grep-from-showing-up-in-ps-results)
+- in shellscript,  
+--(013) display all results retrieved from `ps` and `grep`, and exclude `grep` itself. [ref](http://unix.stackexchange.com/questions/74185/how-can-i-prevent-grep-from-showing-up-in-ps-results)  
+--(014) run command through `grep` results in one line.  
+1. '-f3-' in `cut`: means the rest args listing from 3rd arg.  
+2. why use `tr`: to make sure all strings were conjunected along with single space.  
+3. how to execute: here I use awk and its parameter $0. but there should be other better ways to do.
 
 ## 2015/04/30
 
