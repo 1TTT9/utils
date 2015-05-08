@@ -104,7 +104,7 @@ case $1 in
 	-013  )
 		echo '`ps aux | grep "[f]irefox"`'
 		;;				
-	-013  )
+	-014  )
 		echo '`ps aux | grep "my_gadget.jar" | head -n 5 | tail -n 1 | tr -s " " | cut -d" " -f3- | awk "{system( $0)}" `'
 		;;						
 esac
