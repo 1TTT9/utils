@@ -3,6 +3,12 @@
 ===
 Provide some auxiliary tools or hints with sample codes, such as 'replace one column in a file', 'parse CSV file', 'display n line with condition in a file' and so on.
 
+## 2015/05/28
+
+## ■ Appended
+- in python, 
+  - `blanks2tab.py` uploaded. It demonstrates how to replace multiple blanks between words with tab key. 
+
 
 ## 2015/05/08
 
