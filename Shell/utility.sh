@@ -36,6 +36,7 @@ USAGE: >>sh utility.sh -i [FILENAME]
 \n -012) kill all processes with regarding to keywords in one line
 \n -013) show all grepped results and exclude the 'grep' process itself
 \n -014) run command retrieved from grep results in one line
+\n -015) sum column in file
 "
 
 if [[ -z "$1" ]]
@@ -107,4 +108,7 @@ case $1 in
 	-014  )
 		echo '`ps aux | grep "my_gadget.jar" | head -n 5 | tail -n 1 | tr -s " " | cut -d" " -f3- | awk "{system( $0)}" `'
 		;;						
+	-015  )
+		echo '`cat $2 | awk "{sum+=$1} END {print sum}"`'
+		;;								
 esac

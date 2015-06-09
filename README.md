@@ -3,6 +3,13 @@
 ===
 Provide some auxiliary tools or hints with sample codes, such as 'replace one column in a file', 'parse CSV file', 'display n line with condition in a file' and so on.
 
+## 2015/06/09
+
+## ■ Appended
+- in shellscript, 
+  - `blanks2tab.py`, (015) sum up assigned column in file
+
+
 ## 2015/05/28
 
 ## ■ Appended
