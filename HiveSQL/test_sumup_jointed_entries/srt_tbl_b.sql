@@ -1,0 +1,2 @@
+INSERT INTO TABLE test_jointbl_b
+  VALUES (11111, 18, 28), (22222, 31, 100);

@@ -3,19 +3,24 @@
 ===
 Provide some auxiliary tools or hints with sample codes, such as 'replace one column in a file', 'parse CSV file', 'display n line with condition in a file' and so on.
 
+## 2015/06/18
+
+## ■ Appended
+- in HiveSQL, 
+  - Folder `test_sumup_jointed_entries/` are uploaded. These scripts in fodler demonstrate how 'left join' and 'right join' query work, and provide an exmaple to sum up the jointed entries on both table.
+  - Remember, syntax `left outer join` means map tbl_left.value to tbl_right.value, tbl_right. And `right outer join` map tbl_right.value to tbl_left.value (it may occur NULL because we often put larger table on the right hand side)
+
 ## 2015/06/09
 
 ## ■ Appended
 - in shellscript, 
   - `blanks2tab.py`, (015) sum up assigned column in file
 
-
 ## 2015/05/28
 
 ## ■ Appended
 - in python, 
   - `blanks2tab.py` uploaded. It demonstrates how to replace multiple blanks between words with tab key. 
-
 
 ## 2015/05/08
 
