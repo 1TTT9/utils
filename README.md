@@ -8,8 +8,19 @@ Provide some auxiliary tools or hints with sample codes, such as 'replace one co
 ## ■ Appended
 - in HiveSQL, 
   - Folder `test_sumup_jointed_entries/` are uploaded. These scripts in fodler demonstrate how 'left join' and 'right join' query work, and provide an exmaple to sum up the jointed entries on both table.
-  - Remember, syntax `left outer join` means map tbl_left.value to tbl_right.value, tbl_right. And `right outer join` map tbl_right.value to tbl_left.value (it may occur NULL because we often put larger table on the right hand side)
-  - Reference [1](http://www.cnblogs.com/ggjucheng/archive/2013/01/15/2860723.html)[2](http://blog.csdn.net/lhzblog/article/details/38587541)[3](http://www.cnblogs.com/xd502djj/archive/2013/01/18/2866662.html)[4](http://3ktechnologies.com/blog/5-ways-to-make-your-hive-queries-run-faster/)
+  - Remember, syntax `left outer join` means map tbl_left.value to tbl_right.value. And `right outer join` map tbl_right.value to tbl_left.value (it may occur NULL because we often put larger table on the right hand side)
+  ```
+    # left outer join
+    for each row[i] in tbl_left:
+      for each row[j] in tbl_right:
+        pass
+
+    # right outer join
+    for each row[i] in tbl_right:
+      for each row[j] in tbl_left:
+        pass
+  ```
+  - Reference [1](http://www.cnblogs.com/ggjucheng/archive/2013/01/15/2860723.html),[2](http://blog.csdn.net/lhzblog/article/details/38587541),[3](http://www.cnblogs.com/xd502djj/archive/2013/01/18/2866662.html),[4](http://3ktechnologies.com/blog/5-ways-to-make-your-hive-queries-run-faster/)
 
 ## 2015/06/09
 
