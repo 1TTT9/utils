@@ -37,6 +37,10 @@ USAGE: >>sh utility.sh -i [FILENAME]
 \n -013) show all grepped results and exclude the 'grep' process itself
 \n -014) run command retrieved from grep results in one line
 \n -015) sum column in file
+\n============================================================ 
+\n=============== operation in CSV files ---================== 
+\n -016) display column 2 in file.
+\n -017) display column 2 in file, delete 1st line, convert timestamp to readble time-string and sort.
 "
 
 if [[ -z "$1" ]]
@@ -110,5 +114,10 @@ case $1 in
 		;;						
 	-015  )
 		echo '`cat $2 | awk "{sum+=$1} END {print sum}"`'
+		;;								
+	-016  )
+		echo '`awk -F "\"*,\"*" "{print $2}" $2`'
+	-017  )
+		echo "awk -F '\'*,\'*' '{print $8}' $2 | sed '1d' | python -c 'import sys;import time;print sorted(set([time.strftime("%Y-%m-%d", time.localtime(int(ep.replace("\n", "")))) for ep in sys.stdin]))'"
 		;;								
 esac
