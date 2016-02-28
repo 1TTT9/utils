@@ -7,6 +7,11 @@ Provide some auxiliary tools or hints with sample codes, such as 'replace one co
 
 ## Recent Releases
 ---
+### 2016/02/28
+- in Javascript,
+  - created folder Javascript.
+
+
 ### 2015/06/18
 - in HiveSQL, 
   - Folder `test_sumup_jointed_entries/` are uploaded. These scripts in fodler demonstrate how 'left join' and 'right join' query work, and provide an exmaple to sum up the jointed entries on both table.
